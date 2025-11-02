@@ -127,6 +127,29 @@
     <div class="countdown" id="countdown"></div>
   </header>
 
+  <!-- Countdown Acara -->
+  <section style="background:linear-gradient(to bottom right,#fff0f6,#fffafc);padding:100px 20px;">
+    <h2 style="color:#d4a373;font-family:'Great Vibes';font-size:2.8em;">Menuju Hari Bahagia</h2>
+    <div id="big-countdown" style="margin-top:30px;display:flex;justify-content:center;gap:25px;flex-wrap:wrap;">
+      <div style="text-align:center;">
+        <h3 id="days" style="font-size:3em;color:#a86d8b;">00</h3>
+        <p style="color:#d4a373;">Hari</p>
+      </div>
+      <div style="text-align:center;">
+        <h3 id="hours" style="font-size:3em;color:#a86d8b;">00</h3>
+        <p style="color:#d4a373;">Jam</p>
+      </div>
+      <div style="text-align:center;">
+        <h3 id="minutes" style="font-size:3em;color:#a86d8b;">00</h3>
+        <p style="color:#d4a373;">Menit</p>
+      </div>
+      <div style="text-align:center;">
+        <h3 id="seconds" style="font-size:3em;color:#a86d8b;">00</h3>
+        <p style="color:#d4a373;">Detik</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Video Section -->
   <section class="video-section">
     <video autoplay muted loop playsinline>
@@ -135,51 +158,88 @@
     <div class="overlay">Forever Starts Here 💍</div>
   </section>
 
-    <!-- Pricing Section Start -->
-  <section id="pricing">
-    <h2>Paket Website Undangan</h2>
-    <p>Pilih paket yang sesuai dengan kebutuhan acara Anda.</p>
-    <div class="pricing-container">
+   <!-- Pricing Section Start -->
+<section id="pricing" style="padding:80px 20px; background:linear-gradient(135deg, #fff8fb, #f9f0ff); text-align:center;">
+  <h2 style="font-size:2.2rem; color:#8a3ffc; margin-bottom:10px;">Paket Website Undangan</h2>
+  <p style="color:#666; margin-bottom:50px;">Pilih paket yang sesuai dengan kebutuhan acara Anda.</p>
 
-      <div class="pricing-card">
-        <h3>Basic</h3>
-        <p class="price">Rp99.000</p>
-        <ul>
-          <li>✅ Desain elegan 1 halaman</li>
-          <li>✅ Countdown acara</li>
-          <li>✅ RSVP form (dummy)</li>
-          <li>❌ Tanpa musik / domain</li>
-        </ul>
-        <button>Pilih Paket</button>
-      </div>
+  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px;">
 
-      <div class="pricing-card featured">
-        <h3>Standard</h3>
-        <p class="price">Rp249.000</p>
-        <ul>
-          <li>✅ Desain elegan custom warna</li>
-          <li>✅ Musik pilihan</li>
-          <li>✅ RSVP aktif via Google Form</li>
-          <li>✅ Link unik (.github.io)</li>
-        </ul>
-        <button>Pilih Paket</button>
-      </div>
-
-      <div class="pricing-card">
-        <h3>Premium</h3>
-        <p class="price">Rp499.000</p>
-        <ul>
-          <li>✅ Desain full custom</li>
-          <li>✅ Animasi & musik</li>
-          <li>✅ Galeri foto/video</li>
-          <li>✅ Domain .my.id + hosting</li>
-        </ul>
-        <button>Pilih Paket</button>
-      </div>
-
+    <!-- Paket Basic -->
+    <div class="card" style="background:white; border-radius:20px; box-shadow:0 5px 20px rgba(0,0,0,0.1); padding:30px; width:280px; transition:all 0.3s ease;">
+      <h3 style="color:#ff7eb9;">Basic</h3>
+      <p class="price" style="font-size:1.8rem; color:#333; margin:10px 0;">Rp99.000</p>
+      <ul style="list-style:none; padding:0; margin-bottom:25px; color:#444; text-align:left;">
+        <li>✅ Desain elegan 1 halaman</li>
+        <li>✅ Countdown acara</li>
+        <li>✅ RSVP form (dummy)</li>
+        <li>❌ Tanpa musik / domain</li>
+      </ul>
+      <button onclick="orderPaket('Basic')" 
+        style="background:#ff7eb9; border:none; padding:10px 25px; border-radius:30px; color:white; cursor:pointer; transition:0.3s;">
+        Pilih Paket
+      </button>
     </div>
-  </section>
-  <!-- Pricing Section End -->
+
+    <!-- Paket Standard -->
+    <div class="card" style="background:white; border-radius:20px; box-shadow:0 5px 20px rgba(0,0,0,0.1); padding:30px; width:280px; transition:all 0.3s ease;">
+      <h3 style="color:#9b51ff;">Standard</h3>
+      <p class="price" style="font-size:1.8rem; color:#333; margin:10px 0;">Rp249.000</p>
+      <ul style="list-style:none; padding:0; margin-bottom:25px; color:#444; text-align:left;">
+        <li>✅ Desain elegan custom warna</li>
+        <li>✅ Musik pilihan</li>
+        <li>✅ RSVP aktif via Google Form</li>
+        <li>✅ Link unik (.github.io)</li>
+        <li>✅ Google Maps lokasi untuk tamu</li>
+      </ul>
+      <button onclick="orderPaket('Standard')" 
+        style="background:#9b51ff; border:none; padding:10px 25px; border-radius:30px; color:white; cursor:pointer; transition:0.3s;">
+        Pilih Paket
+      </button>
+    </div>
+
+    <!-- Paket Premium -->
+    <div class="card" style="background:white; border-radius:20px; box-shadow:0 5px 20px rgba(0,0,0,0.1); padding:30px; width:280px; transition:all 0.3s ease;">
+      <h3 style="color:#f4b400;">Premium</h3>
+      <p class="price" style="font-size:1.8rem; color:#333; margin:10px 0;">Rp499.000</p>
+      <ul style="list-style:none; padding:0; margin-bottom:25px; color:#444; text-align:left;">
+        <li>✅ Desain full custom</li>
+        <li>✅ Animasi & musik</li>
+        <li>✅ Galeri foto/video</li>
+        <li>✅ Google Maps lokasi untuk tamu</li>
+      </ul>
+      <button onclick="orderPaket('Premium')" 
+        style="background:#f4b400; border:none; padding:10px 25px; border-radius:30px; color:white; cursor:pointer; transition:0.3s;">
+        Pilih Paket
+      </button>
+    </div>
+
+  </div>
+</section>
+<!-- Pricing Section End -->
+
+<!-- Script WA Redirect -->
+<script>
+  function orderPaket(paket) {
+    const nomorWA = "6281210818919"; // nomor WA lo
+    const pesan = Halo GusRich Website Maker,%0ASaya tertarik dengan *Paket ${paket}* untuk website undangan saya.%0ABoleh dibantu info lebih lanjut?;
+    const link = https://wa.me/${nomorWA}?text=${pesan};
+    window.open(link, "_blank");
+  }
+
+  // Tambahan efek hover biar makin hidup
+  const cards = document.querySelectorAll(".card");
+  cards.forEach(card => {
+    card.addEventListener("mouseover", () => {
+      card.style.transform = "scale(1.05)";
+      card.style.boxShadow = "0 10px 30px rgba(0,0,0,0.15)";
+    });
+    card.addEventListener("mouseout", () => {
+      card.style.transform = "scale(1)";
+      card.style.boxShadow = "0 5px 20px rgba(0,0,0,0.1)";
+    });
+  });
+</script>
 
   <!-- Galeri -->
   <section>
@@ -233,7 +293,7 @@
   <script>
     // Countdown
     const countdown = document.getElementById("countdown");
-    const targetDate = new Date("2025-12-20T00:00:00").getTime();
+    const targetDate = new Date("2080-12-30T08:00:00").getTime();
     setInterval(() => {
       const now = new Date().getTime();
       const distance = targetDate - now;
@@ -246,5 +306,27 @@
       countdown.innerHTML = ${days} hari ${hours} jam lagi;
     }, 1000);
   </script>
+
+  <script>
+  // Countdown besar
+  const target = new Date("2080-12-30T08:00:00").getTime(); // 2080-12-20/jam acara
+  const updateCountdown = () => {
+    const now = new Date().getTime();
+    const distance = target - now;
+
+    if (distance < 0) return;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("days").innerText = days;
+    document.getElementById("hours").innerText = hours;
+    document.getElementById("minutes").innerText = minutes;
+    document.getElementById("seconds").innerText = seconds;
+  };
+  setInterval(updateCountdown, 1000);
+</script>
 </body>
 </html>
