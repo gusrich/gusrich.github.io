@@ -127,6 +127,12 @@
     <div class="countdown" id="countdown"></div>
   </header>
 
+  <section class="hero">
+  <h1>Undangan Pernikahan Audi & Shita</h1>
+  <p>Kepada Yth:</p>
+  <h2 id="guest-name">Sdr. Reza & Keluarga</h2> <!-- Nama tamu muncul di sini -->
+</section>
+
   <!-- Countdown Acara -->
   <section style="background:linear-gradient(to bottom right,#fff0f6,#fffafc);padding:100px 20px;">
     <h2 style="color:#d4a373;font-family:'Great Vibes';font-size:2.8em;">Menuju Hari Bahagia</h2>
@@ -331,6 +337,22 @@
     document.getElementById("seconds").innerText = seconds;
   };
   setInterval(updateCountdown, 1000);
+</script>
+
+  <script>
+  // Ambil parameter nama dari URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const guestName = urlParams.get('to');
+
+  // Cari elemen target buat nampilin nama tamu
+  const nameTarget = document.getElementById('guest-name');
+
+  // Kalau ada nama di URL, tampilkan. Kalau enggak, tampilkan default.
+  if (guestName && nameTarget) {
+    nameTarget.textContent = decodeURIComponent(guestName);
+  } else if (nameTarget) {
+    nameTarget.textContent = "Tamu Undangan";
+  }
 </script>
 </body>
 </html>
