@@ -245,5 +245,27 @@ footer {
   }
 }
 /* === SECTION: HERO END === */
+/* === FIX OVERLAY DAN Z-INDEX === */
+.hero {
+  z-index: 1;
+}
+
+section:not(.hero) {
+  position: relative;
+  z-index: 2;
+}
+
+/* Pastikan tombol WA & logo selalu di atas segalanya */
+.whatsapp-btn, .logo-floating {
+  position: fixed;
+  z-index: 9999 !important;
+}
+
+/* Tambahan kecil biar animasi global dan kartu tetap aktif */
+section {
+  isolation: isolate;
+}
+
+
 
 
