@@ -1,263 +1,241 @@
-/* =========================================
-   🌌 GUSRICH WEBSITE MAKER - STYLE.CSS
-   Modern Tech & Neon Elegant Theme
-   ========================================= */
-
-/* === ROOT VARIABLES === */
+/* ==================== ROOT VARIABLES ==================== */
 :root {
-  --bg-dark: #050810;
-  --accent: #00e0ff;
-  --accent-glow: 0 0 20px rgba(0, 224, 255, 0.7);
-  --text-light: #e4e6eb;
-  --text-dim: #b0b3b8;
+  --bg-dark: #0e0e10;
+  --bg-card: #18181b;
+  --accent: #00f6ff;
+  --text-light: #f2f2f2;
+  --text-dim: #a0a0a0;
+  --shadow-glow: 0 0 15px rgba(0, 255, 255, 0.4);
+  --radius: 16px;
   --transition: all 0.3s ease;
 }
 
-/* === GLOBAL RESET START === */
+/* ==================== RESET & BASE ==================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scroll-behavior: smooth;
-  font-family: 'Poppins', sans-serif;
 }
+
 body {
-  background: linear-gradient(-45deg, #000814, #001d3d, #000814);
-  background-size: 400% 400%;
-  animation: gradientMove 15s ease infinite;
+  background: var(--bg-dark);
   color: var(--text-light);
-  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
   line-height: 1.6;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-/* === GLOBAL RESET END === */
 
-
-/* === NAVBAR START === */
+/* ==================== NAVBAR ==================== */
 header {
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(14, 14, 16, 0.8);
   backdrop-filter: blur(10px);
-  padding: 15px 0;
+  padding: 1rem 0;
   z-index: 1000;
-  border-bottom: 1px solid rgba(0, 224, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.navbar {
+nav {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 2rem;
 }
 
-.navbar a {
+nav a {
   color: var(--text-light);
   text-decoration: none;
   font-weight: 500;
   transition: var(--transition);
 }
 
-.navbar a:hover {
+nav a:hover {
   color: var(--accent);
-  text-shadow: var(--accent-glow);
+  text-shadow: var(--shadow-glow);
 }
-/* === NAVBAR END === */
 
-
-/* === SECTION: HERO START === */
+/* ==================== HERO SECTION ==================== */
 .hero {
-  min-height: 100vh;
-  background: 
-    linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.85)),
-    url('grpic/bghero.jpg') no-repeat center center/cover;
+  background: url("grpic/bghero.jpg") center/cover no-repeat;
+  height: 90vh;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 120px 20px;
+  position: relative;
+  color: white;
 }
 
-.hero-content h1 {
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+}
+
+.hero h1 {
   font-size: 3rem;
-  color: var(--accent);
-  text-shadow: 0 0 25px var(--accent);
+  margin-bottom: 1rem;
+  text-shadow: var(--shadow-glow);
 }
 
-.hero-content p {
-  margin-top: 15px;
-  font-size: 1.2rem;
-  color: var(--text-light);
+.hero p {
+  color: var(--text-dim);
+  margin-bottom: 2rem;
 }
 
 .cta-btn {
-  margin-top: 30px;
-  padding: 14px 30px;
   background: var(--accent);
   color: #000;
-  font-weight: bold;
+  padding: 0.9rem 2rem;
   border: none;
-  border-radius: 30px;
-  box-shadow: var(--accent-glow);
+  border-radius: 50px;
   cursor: pointer;
+  font-weight: 600;
   transition: var(--transition);
 }
+
 .cta-btn:hover {
-  background: #00b3cc;
-  box-shadow: 0 0 25px var(--accent);
-}
-/* === SECTION: HERO END === */
-
-
-/* === SECTION: LAYANAN START === */
-section {
-  padding: 80px 20px;
-}
-section h2 {
-  text-align: left;
-  font-size: 2.2rem;
-  margin-bottom: 1.5rem;
-  color: #fff;
+  background: white;
+  color: black;
+  box-shadow: var(--shadow-glow);
 }
 
-.services,{
-  max-width: 900px;       /* lebar konten maksimal */
-  margin: 0 auto;         /* center */
+/* ==================== SECTION BASE ==================== */
+.section {
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-shadow: var(--shadow-glow);
+}
+
+/* ==================== GRID (LAYANAN + HARGA) ==================== */
+.grid {
   display: grid;
-  gap: 22px;
-  grid-template-columns: 1fr; /* <<< JADIKAN SATU KOLOM (VERTICAL) */
-  padding: 0 20px;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .card {
-  background: rgba(10, 15, 35, 0.8);
-  border: 1px solid rgba(0, 255, 255, 0.1);
-  border-radius: 16px;
-  padding: 30px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 0 10px rgba(0, 255, 255, 0.05);
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
   transition: var(--transition);
 }
+
 .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 25px var(--accent);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-glow);
 }
-.card h3 {
-  color: var(--accent);
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-}
-.card p {
+
+/* ==================== PRICE CARDS ==================== */
+.price-old {
+  text-decoration: line-through;
   color: var(--text-dim);
-  font-size: 1rem;
+  margin-bottom: 0.5rem;
 }
-/* === SECTION: LAYANAN END === */
 
-
-/* === SECTION: PRICING START === */
-.pricing {
-  max-width: 900px;       /* lebar konten maksimal */
-  margin: 0 auto;         /* center */
-  display: grid;
-  gap: 22px;
-  grid-template-columns: 1fr; /* <<< JADIKAN SATU KOLOM (VERTICAL) */
-  padding: 0 20px;
-.price-card {
-  background: rgba(15, 20, 40, 0.8);
-  border: 1px solid rgba(0, 255, 255, 0.15);
-  border-radius: 16px;
-  padding: 35px;
-  text-align: center;
-  box-shadow: 0 0 10px rgba(0, 224, 255, 0.05);
-  transition: var(--transition);
-}
-.price-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 25px var(--accent);
-}
-.price-card h3 {
-  font-size: 1.5rem;
+.price-tag {
+  font-size: 1.8rem;
   color: var(--accent);
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
+  font-weight: 600;
 }
-.price {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 15px;
-  color: #fff;
-}
-.price-card ul {
+
+.price ul {
   list-style: none;
   text-align: left;
-  margin: 20px 0;
-}
-.price-card ul li {
-  margin: 8px 0;
+  margin: 1rem 0;
   color: var(--text-dim);
 }
-.price-card button {
-  padding: 10px 20px;
+
+.price ul li {
+  margin: 0.5rem 0;
+}
+
+.btn-primary {
+  background: var(--accent);
   border: none;
-  border-radius: 30px;
-  background: var(--accent);
   color: #000;
-  font-weight: bold;
+  font-weight: 600;
+  padding: 0.8rem 1.5rem;
+  border-radius: 40px;
   cursor: pointer;
   transition: var(--transition);
 }
-.price-card button:hover {
-  background: #00b3cc;
-  box-shadow: 0 0 20px var(--accent);
-}
-/* === SECTION: PRICING END === */
 
+.btn-primary:hover {
+  background: white;
+  color: black;
+  box-shadow: var(--shadow-glow);
+}
 
-/* === SECTION: CONTACT / FLOATING BUTTON START === */
-#contact-btn, #logo-btn {
-  position: fixed;
-  bottom: 25px;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: var(--accent);
-  box-shadow: var(--accent-glow);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transition: var(--transition);
-  z-index: 999;
+.highlight {
+  border: 1px solid var(--accent);
+  box-shadow: var(--shadow-glow);
 }
-#contact-btn:hover, #logo-btn:hover {
-  transform: scale(1.1);
-}
-#contact-btn {
-  right: 25px;
-}
-#logo-btn {
-  left: 25px;
-  background: rgba(0, 255, 255, 0.15);
-  border: 1px solid rgba(0, 255, 255, 0.4);
-}
-#logo-btn img {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-}
-/* === SECTION: CONTACT / FLOATING BUTTON END === */
 
-
-/* === FOOTER START === */
+/* ==================== FOOTER ==================== */
 footer {
   text-align: center;
-  padding: 40px;
+  padding: 2rem;
   color: var(--text-dim);
-  font-size: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
-/* === FOOTER END === */
 
+/* ==================== FLOATING BUTTONS ==================== */
+#backToTop,
+#waButton {
+  position: fixed;
+  bottom: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+#backToTop {
+  right: 80px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+#backToTop img {
+  width: 30px;
+  height: 30px;
+}
+
+#waButton {
+  right: 20px;
+  background: #25d366;
+  color: white;
+  text-decoration: none;
+}
+
+#backToTop:hover {
+  box-shadow: var(--shadow-glow);
+}
+
+#waButton:hover {
+  background: #1ebe5d;
+  transform: scale(1.1);
+}
