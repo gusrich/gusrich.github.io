@@ -192,46 +192,110 @@ nav a:hover {
 /* ======================
    Tambahan Style Section Tentang (GusRich)
    ====================== */
-
-.tentang-section {
-  background: #0f0f1a;
+.gr-tentang-section {
+  background: radial-gradient(circle at top left, #2a2d84, #090a1a);
   color: #fff;
   padding: 80px 20px;
   text-align: center;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+  position: relative;
 }
 
-.tentang-container {
-  max-width: 900px;
-  margin: auto;
-}
-
-.tentang-title {
-  font-size: 2rem;
-  font-weight: 700;
-  background: linear-gradient(90deg, #5b5bff, #9b4dff);
+.gr-tentang-title {
+  font-size: 2.2rem;
+  background: linear-gradient(45deg, #7f5af0, #00aaff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 1s ease forwards;
 }
 
-.tentang-text {
+.gr-quote {
+  font-style: italic;
+  color: #ffd580;
   font-size: 1.1rem;
+  margin-bottom: 40px;
+  opacity: 0;
+  animation: fadeIn 1.5s ease forwards 0.3s;
+}
+
+.gr-story p {
+  max-width: 700px;
+  margin: 10px auto;
   line-height: 1.8;
-  opacity: 0.9;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease forwards;
+}
+.gr-story p:nth-child(2) { animation-delay: 0.3s; }
+.gr-story p:nth-child(3) { animation-delay: 0.6s; }
+
+.gr-philosophy {
+  margin-top: 60px;
 }
 
-.tentang-card {
-  background: rgba(255,255,255,0.05);
-  border-radius: 16px;
-  padding: 30px;
-  margin-top: 40px;
-  backdrop-filter: blur(8px);
-  transition: 0.3s ease;
+.gr-philosophy h3 {
+  font-size: 1.8rem;
+  color: #a4b0ff;
+  margin-bottom: 25px;
 }
 
-.tentang-card:hover {
-  transform: translateY(-5px);
-  background: rgba(255,255,255,0.1);
+.gr-card-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.gr-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 20px;
+  flex: 1 1 250px;
+  max-width: 300px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s ease forwards;
+}
+.gr-card:nth-child(1) { animation-delay: 0.4s; }
+.gr-card:nth-child(2) { animation-delay: 0.8s; }
+.gr-card:nth-child(3) { animation-delay: 1.2s; }
+
+.gr-card h4 {
+  color: #ffd580;
+  margin-bottom: 10px;
+}
+
+.gr-closing {
+  margin-top: 50px;
+  font-size: 1.2rem;
+  color: #ffd580;
+  font-weight: 600;
+  opacity: 0;
+  animation: fadeIn 2s ease forwards 1.5s;
+}
+
+/* Animasi lembut */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .gr-card-container {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 /* ==================== FOOTER ==================== */
@@ -284,4 +348,5 @@ footer {
   background: #1ebe5d;
   transform: scale(1.1);
 }
+
 
