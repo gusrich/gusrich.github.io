@@ -189,6 +189,51 @@ nav a:hover {
   box-shadow: var(--shadow-glow);
 }
 
+/* ======================
+   Tambahan Style Section Tentang (GusRich)
+   ====================== */
+
+.tentang-section {
+  background: #0f0f1a;
+  color: #fff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.tentang-container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.tentang-title {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #5b5bff, #9b4dff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 20px;
+}
+
+.tentang-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  opacity: 0.9;
+}
+
+.tentang-card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 16px;
+  padding: 30px;
+  margin-top: 40px;
+  backdrop-filter: blur(8px);
+  transition: 0.3s ease;
+}
+
+.tentang-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255,255,255,0.1);
+}
+
 /* ==================== FOOTER ==================== */
 footer {
   text-align: center;
@@ -239,3 +284,4 @@ footer {
   background: #1ebe5d;
   transform: scale(1.1);
 }
+
