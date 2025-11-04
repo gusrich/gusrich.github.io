@@ -192,7 +192,7 @@ nav a:hover {
 /* ======================
    Tambahan Style Section Tentang (GusRich)
    ====================== */
-.gr-tentang-section {
+.gr-tentang kami-section {
   background: radial-gradient(circle at top left, #2a2d84, #090a1a);
   color: #fff;
   padding: 80px 20px;
@@ -202,7 +202,7 @@ nav a:hover {
   position: relative;
 }
 
-.gr-tentang-title {
+.gr-tentang kami-title {
   font-size: 2.2rem;
   background: linear-gradient(45deg, #7f5af0, #00aaff);
   -webkit-background-clip: text;
@@ -348,5 +348,6 @@ footer {
   background: #1ebe5d;
   transform: scale(1.1);
 }
+
 
 
