@@ -1,1 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Undangan Pernikahan — Nama & Nama</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section id="hero" class="section hero">
+    <div class="overlay"></div>
+    <div class="content">
+      <h1 class="couple">Nama & Nama</h1>
+      <p class="subtitle">Dengan penuh cinta kami mengundang Anda untuk hadir di hari bahagia kami</p>
+      <span class="date">Sabtu, 20 Desember 2025</span>
+      <div id="countdown" class="countdown"></div>
+      <a href="#rsvp" class="btn-primary">Konfirmasi Kehadiran</a>
+    </div>
+  </section>
+  <!-- ==================== END HERO SECTION ==================== -->
+
+
+  <!-- ==================== STORY SECTION ==================== -->
+  <section id="story" class="section story">
+    <h2 class="section-title">Kisah Kami</h2>
+    <p class="text">
+      Kami pertama kali bertemu pada tahun 2018 di sebuah acara kampus. Waktu berjalan dan kami pun menyadari bahwa cinta tumbuh dari kesederhanaan dan kebersamaan.
+    </p>
+  </section>
+  <!-- ==================== END STORY SECTION ==================== -->
+
+
+  <!-- ==================== EVENT SECTION ==================== -->
+  <section id="event" class="section event">
+    <h2 class="section-title">Detail Acara</h2>
+    <div class="event-cards">
+      <div class="card">
+        <h3>Akad Nikah</h3>
+        <p>10.00 WIB - Gedung Elegan Ballroom</p>
+      </div>
+      <div class="card">
+        <h3>Resepsi</h3>
+        <p>12.00 - 15.00 WIB - Gedung Elegan Ballroom</p>
+      </div>
+    </div>
+  </section>
+  <!-- ==================== END EVENT SECTION ==================== -->
+
+
+  <!-- ==================== GALLERY SECTION ==================== -->
+  <section id="gallery" class="section gallery">
+    <h2 class="section-title">Galeri</h2>
+    <div class="gallery-grid">
+      <img src="https://images.unsplash.com/photo-1518972559570-1ec4a3c1f7b6?w=800" alt="Foto 1" />
+      <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=800" alt="Foto 2" />
+      <img src="https://images.unsplash.com/photo-1506086679523-8c3ad5a46a9d?w=800" alt="Foto 3" />
+    </div>
+  </section>
+  <!-- ==================== END GALLERY SECTION ==================== -->
+
+
+  <!-- ==================== RSVP SECTION ==================== -->
+  <section id="rsvp" class="section rsvp">
+    <h2 class="section-title">Konfirmasi Kehadiran</h2>
+    <form id="rsvpForm" class="rsvp-form">
+      <input type="text" name="name" placeholder="Nama Lengkap" required />
+      <input type="text" name="phone" placeholder="No. Telepon" required />
+      <select name="status" required>
+        <option value="">Pilih Kehadiran</option>
+        <option value="hadir">Hadir</option>
+        <option value="tidak">Berhalangan</option>
+      </select>
+      <button type="submit" class="btn-primary">Kirim</button>
+      <p id="rsvpMessage" class="message"></p>
+    </form>
+  </section>
+  <!-- ==================== END RSVP SECTION ==================== -->
+
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer>
+    <p>Terima kasih telah menjadi bagian dari hari bahagia kami.</p>
+    <span>© 2025 by Gusrich Website Maker</span>
+  </footer>
+  <!-- ==================== END FOOTER ==================== -->
+
+  <script src="script.js"></script>
+</body>
+</html>
 
